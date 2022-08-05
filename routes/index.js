@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
-const Posts = require('./models/Posts');
+const Posts = require('../models/Posts');
 var router = express.Router();
 var mongoDB = 'mongodb+srv://bthomas:bthomas@cluster0.xjccjyk.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});

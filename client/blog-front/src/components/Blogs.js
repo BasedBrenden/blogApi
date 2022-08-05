@@ -5,7 +5,7 @@ const Blogs =() =>{
     const [blogs, setblogs] = useState([])
 
     const getBlogInfo =()=>{
-        fetch('http://localhost:3000')
+        fetch('http://globalmessageboardly.herokuapp.com/')
         .then((response)=>{
             return response.json()
         }).then((response)=>{

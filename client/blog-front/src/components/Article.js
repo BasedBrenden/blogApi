@@ -2,6 +2,7 @@ import {Link, useLocation} from "react-router-dom"
 import defaultStock from "./styles/radnom_stock1.jpg"
 import dateFormat from "dateformat"
 import './styles/Articles.css'
+import Nav from "./Nav"
 
 const Article =() =>{
      const Article = useLocation()
@@ -25,10 +26,13 @@ const Article =() =>{
                 postID: Article.state.index })})
             .then(response => response.json())
             .catch(err => console.log(err))
-        
     }
+    
     return(
-        <div className="mainContainer">
+        <div>
+            <Nav/>
+        
+            <div className="mainContainer">
             <div className="articleContainer">
                 <img src={defaultStock} alt="img not found" className="blog-image"></img>
                 <div className="blog-header">
@@ -52,6 +56,7 @@ const Article =() =>{
                     <div className="comments-indv">
                         <p className="comments-comment">{comment.comment}</p>
                         <p className="comments-date">Submited on {dateFormat(comment.date, "mmmm dS, yyyy")}</p>
+                        <p className="comments-author">{comment.author}</p>
                     </div>)}
                 </div>
                 
@@ -63,6 +68,7 @@ const Article =() =>{
             </div>
 
             
+            </div>
         </div>
     )
 }

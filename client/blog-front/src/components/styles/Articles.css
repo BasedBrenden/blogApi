@@ -1,6 +1,5 @@
 .mainContainer{
     text-align: center;
-  border: solid black 1px;
   background-color: white;
   display: grid;
   grid-template-areas:
@@ -15,9 +14,7 @@
     grid-area: mainview;
 }
 
-.comments-form{
-    
-}
+
 
 h2{
     text-align: left;
@@ -35,12 +32,13 @@ h2{
 .comments-div{
     grid-area:comments;
     display:flex;
+    flex-direction: column;
 }
 
 
 .comments-indv{
     border: 1px solid black;
-    min-height: 150px;
+    min-height: 100px;
     max-width: 600px;
     margin: 5%;
     
@@ -52,10 +50,4 @@ h2{
     min-height: 200px;
 }
 
-#commentAuthor{
-    grid-area: name;
-}
 
-#commentPost{
-    grid-area: submit;
-}

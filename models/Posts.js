@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var postCommentsSchema = new Schema({
     comment: {type: String},
+    author: {type: String},
     date: {type: Date},
 })
 
@@ -10,6 +11,7 @@ var postListSchema = new Schema({
     public: {type: Boolean},
     title: {type:String},
     blogPost: {type:String},
+    date: {type: Date},
     comments: [postCommentsSchema]
 })
 

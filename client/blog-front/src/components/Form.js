@@ -4,12 +4,11 @@ import { Link } from "react-router-dom"
 const Form =() =>{
 
     const addToBlog =() =>{
-        fetch('http://localhost:3000',{
+        fetch('http://globalmessageboardly.herokuapp.com/',{
             method:'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title: document.getElementById("title").value, blogPost: document.getElementById("content").value })})
             .then(response => response.json())
-            .then(data => console.log(data))
             .catch(err => console.log(err))
         
         

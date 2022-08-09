@@ -26,6 +26,8 @@ router.post('/',  (req,res)=>{
       title: req.body.title,
       blogPost: req.body.blogPost,
       comments: [],
+      //new dates dont appear to be saving in DB but are showing in client front-end.
+      date: new Date(),
     }
     
 
@@ -36,6 +38,24 @@ router.post('/',  (req,res)=>{
     })
   }).clone()
   
+})
+
+router.post('/comments', (req,res)=>{
+  Posts.findById("62e965869ada8f801e5443ea", (err,data)=>{
+    if(err) {return console.error(err)}
+    const newComment ={
+      comment: req.body.post,
+      author: req.body.author,
+      date: new Date(),
+    }
+    const targetPost = req.body.postID;
+
+    data.posts[targetPost].comments.push(newComment);
+
+    data.save((err, updatedData)=>{
+      if(err) console.error(err)
+    })
+  }).clone()
 })
 
 

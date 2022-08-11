@@ -40,7 +40,7 @@ router.post('/',  (req,res)=>{
   
 })
 
-router.put('/comments', (req,res)=>{
+router.post('/comments', (req,res)=>{
   Posts.findById("62e965869ada8f801e5443ea", (err,data)=>{
     if(err) {return console.error(err)}
     const newComment ={

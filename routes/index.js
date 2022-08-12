@@ -55,7 +55,7 @@ router.post('/comments', (req,res)=>{
     data.save((err, updatedData)=>{
       if(err) console.error(err)
     })
-  }).clone()
+  })
 })
 
 

@@ -41,6 +41,7 @@ router.post('/',  (req,res)=>{
 })
 
 router.post('/comments', (req,res)=>{
+  res.header('test','fuck coors')
   Posts.findById("62e965869ada8f801e5443ea", (err,data)=>{
     if(err) {return console.error(err)}
     const newComment ={
@@ -56,6 +57,7 @@ router.post('/comments', (req,res)=>{
       if(err) console.error(err)
     })
   })
+
 })
 
 

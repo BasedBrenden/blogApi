@@ -41,7 +41,7 @@ router.post('/',  (req,res)=>{
 })
 
 router.post('/comments', (req,res)=>{
-  res.header("Access-Control-Allow-Origin", "http://postlybt.herokuapp.com/comments/");
+  res.header("Access-Control-Allow-Origin", "https://postlybt.herokuapp.com/comments/");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   Posts.findById("62e965869ada8f801e5443ea", (err,data)=>{
     if(err) {return console.error(err)}

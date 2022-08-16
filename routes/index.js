@@ -23,7 +23,6 @@ router.post('/',  (req,res)=>{
     if(err) {return console.error(err)}
     const newPost = {
       public:true,
-      image: req.body.imageKey,
       title: req.body.title,
       blogPost: req.body.blogPost,
       comments: [],

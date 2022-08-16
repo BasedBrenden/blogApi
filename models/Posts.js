@@ -9,6 +9,7 @@ var postCommentsSchema = new Schema({
 
 var postListSchema = new Schema({
     public: {type: Boolean},
+    imageKey: {type: String},
     title: {type:String},
     blogPost: {type:String},
     date: {type: Date},

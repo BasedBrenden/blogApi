@@ -20,9 +20,12 @@ router.get('/', async(req, res, next) => {
 router.post('/',  (req,res)=>{
 
   Posts.findById("62e965869ada8f801e5443ea", (err, data)=>{
+    res.header("Access-Control-Allow-Origin", "https://postlybt.herokuapp.com");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     if(err) {return console.error(err)}
     const newPost = {
       public:true,
+      image: req.body.image,
       title: req.body.title,
       blogPost: req.body.blogPost,
       comments: [],

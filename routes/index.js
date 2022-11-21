@@ -4,8 +4,7 @@ const Posts = require('../models/Posts');
 var router = express.Router();
 var mongoDB = 'mongodb+srv://bthomas:bthomas@cluster0.xjccjyk.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
-const bodyParser = require('body-parser');
-router.use(bodyParser.json());
+
 
 
 /* GET home page. */
@@ -20,8 +19,6 @@ router.get('/', async(req, res, next) => {
 router.post('/',  (req,res)=>{
 
   Posts.findById("62e965869ada8f801e5443ea", (err, data)=>{
-    res.header("Access-Control-Allow-Origin", "https://postlybt.herokuapp.com");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     if(err) {return console.error(err)}
     const newPost = {
       public:true,
@@ -44,8 +41,7 @@ router.post('/',  (req,res)=>{
 })
 
 router.post('/comments', (req,res)=>{
-  res.header("Access-Control-Allow-Origin", "https://postlybt.herokuapp.com");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
   Posts.findById("62e965869ada8f801e5443ea", (err,data)=>{
     if(err) {return console.error(err)}
     const newComment ={

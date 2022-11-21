@@ -24,6 +24,7 @@ router.post('/',  (req,res, next)=>{
       public:true,
       image: req.body.image,
       title: req.body.title,
+      author: req.body.author,
       blogPost: req.body.blogPost,
       comments: [],
       date: new Date(),

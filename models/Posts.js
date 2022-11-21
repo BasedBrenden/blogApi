@@ -11,6 +11,7 @@ var postListSchema = new Schema({
     public: {type: Boolean},
     image: {type: String},
     title: {type:String},
+    author: {type:String},
     blogPost: {type:String},
     date: {type: Date},
     comments: [postCommentsSchema]

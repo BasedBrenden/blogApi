@@ -16,7 +16,7 @@ router.get('/', async(req, res, next) => {
 });
 
 //add new posts
-router.post('/',  (req,res)=>{
+router.post('/',  (req,res, next)=>{
 
   Posts.findById("62e965869ada8f801e5443ea", (err, data)=>{
     if(err) {return console.error(err)}
@@ -26,7 +26,6 @@ router.post('/',  (req,res)=>{
       title: req.body.title,
       blogPost: req.body.blogPost,
       comments: [],
-      //new dates dont appear to be saving in DB but are showing in client front-end.
       date: new Date(),
     }
     
@@ -36,7 +35,8 @@ router.post('/',  (req,res)=>{
     data.save((err,updatedData)=>{
       if(err) console.error(err)
     })
-  }).clone()
+  })
+  res.send()
   
 })
 
